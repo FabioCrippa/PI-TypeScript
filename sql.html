@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Dictionary</title>
+    <link rel="stylesheet" href="assets/css/styles_html.css">
+    
+</head>
+
+<body>
+    <main>
+          <h1>Developer Dictionary - SQL</h1>
+        <div class="folha">
+        <h1>Create Database</h1>
+        <h3>A instrução CREATE DATABASE é usada para criar um novo banco de dados SQL.</h3>
+        
+        <div id="caixa">
+            <small>
+                CREATE DATABASE nomeBancodados;
+            </small>
+        </div>
+
+        <h1>Use</h1>
+        <h3>Aponta qual banco de dados será utilizado</h3>
+        
+        <div id="caixa">
+            <small>
+                USE nomeBancoDados;
+            </small>
+        </div>
+
+        <h1>Create table</h1>
+        <h3>Cria uma tabela</h3>
+        
+        <div id="caixa">
+            <small>
+                CREATE TABLE nomeTabela (
+                    ID INT PRIMARY KEY AUTO_INCREMENT,<br>
+                    NOME VARCHAR(60) NOT NULL,<br>
+                    CPF CHAR(11) NOT NULL,<br>
+                    DATANASCIMENTO DATE NOT NULL,<br>
+                    ATIVO BIT NOT NULL,<br>
+                    )
+                <br><br>
+                PRIMARY KEY -- significa chave primária, ou seja, id único. <br>
+                AUTO_INCREMENT -- significa incremento automático do id. <br>
+                VARCHAR -- significa uma string com um número determinado de caracteres. <br>
+                NOT NULL -- preenchimento obrigatório, ou seja, nao pode ser nulo. <br>
+                FLOAT -- numero com virgula <br>
+                FOREIGN KEY -- chave estrangeira que irá relacionar com uma outra tabela <br>
+            </small>
+        </div>
+
+        <h1>Insert into</h1>
+        <h3>Insere dados na tabela</h3>
+        
+        <div id="caixa">
+            <small>
+                INSERT INTO nomeTabela (nomeColuna1, nomeColuna2, ativo, ...)<br>
+                VALUES ("string", "number", booleano)
+            </small>
+        </div>
+
+        <h1>Drop database</h1>
+        <h3>Deleta um banco de dados</h3>
+        
+        <div id="caixa">
+            <small>
+                DROP DATABASE nomeBancoDados; 
+            </small>
+        </div>
+
+        <h1>Drop table</h1>
+        <h3>Deleta uma tabela</h3>
+        
+        <div id="caixa">
+            <small>
+                DROP TABLE nomeTabela;
+            </small>
+        </div>
+
+        <h1>Update...Set...Where</h1>
+        <h3>Atualiza os dados da tabela</h3>
+        
+        <div id="caixa">
+            <small>
+                UPDATE nomeTabela SET nomeColuna = "dadosAtualizados"; <br>
+                WHERE ID = numeroId
+            </small>
+        </div>
+
+        <h1>Delete... From...Where</h1>
+        <h3>Deleta registro da tabela</h3>
+        
+        <div id="caixa">
+            <small>
+                DELETE FROM nomeTabela WHERE ID = numeroId;
+            </small>
+        </div>
+
+        <h1>Truncate table</h1>
+        <h3>Apaga todos os registros da tabela</h3>
+        
+        <div id="caixa">
+            <small>
+                TRUNCATE TABLE nomeTabela;
+            </small>
+        </div>
+
+        <h1>Relacionar tabelas - Foreign key</h1>
+        <h3>Relacionando a tabela1 com a tabela2</h3>
+        
+        <div id="caixa">
+            <small>
+                CREATE TABLE produtos (
+                    ID INT PRIMARY KEY AUTO_INCREMENT, <br>
+                    DESCRICAO VARCHAR (100) NOT NULL, <br>
+                    QTDESTOQUE FLOAT NOT NULL, <br>
+                    PRECO FLOAT NOT NULL, <br>
+                    CATEGORIAID INT NOT NULL, <br>
+                    FOREIGN KEY (CATEGORIAID) REFERENCES CATEGORIAS (ID) <br>
+                )
+            </small>
+        </div>
+
+        <h1>Insert into</h1>
+        <h3>Insere dados na tabela relacionada</h3>
+        
+        <div id="caixa">
+            <small>
+                INSERT INTO  nomeTabela1(nomeColunaTabela2);<br>
+                VALUES ("frios")
+            </small>
+        </div>
+
+        <h1>Tabela associativa - create table</h1>
+        <h3>Tabela3 referenciando a tabela1</h3>
+        
+        <div id="caixa">
+            <small>
+                CREATE TABLE vendas (
+                    ID INT PRIMARY KEY AUTO_INCREMENT,<br>
+                    DATAVENDA DATE NOT NULL,br
+                    CLIENTEID INT NOT NULL,<br>
+                    TOTALVENDA FLOAT NOT NULL,<br>
+                    FOREIGN KEY (CLIENTEID) REFERENCES CLIENTES (ID) <br>
+                )
+            </small>
+        </div>
+
+        <h1>Tabela composta - create table</h1>
+        <h3>Tabela3 referenciando a tabela1 e tabela2</h3>
+        
+        <div id="caixa">
+            <small>
+                CREATE TABLE itens_venda (
+                    IDPRODUTO INT NOT NULL,<br>
+                    IDVENDA INT NOT NULL,<br>
+                    VALORPRODUTO FLOAT NOT NULL,<br>
+                    DESCONTO FLOAT NOT NULL,<br>
+                    FOREIGN KEY (IDVENDA) REFERENCES VENDAS (ID),<br>
+                    FOREIGN KEY (IDPRODUTO) REFERENCES PRODUTOS (ID),<br>
+                    PRIMARY KEY (IDVENDA, IDPRODUTO) <br>
+                )
+            </small>
+        </div>
+
+        <h1>Select...From</h1>
+        <h3>Fazer pesquisa no banco de dados</h3>
+        
+        <div id="caixa">
+            <small>
+                SELECT nomeColuna FROM nomeTabela
+            </small>
+        </div>
+
+        <h1>Select * From</h1>
+        <h3>Busca todas as colunas de uma tabela</h3>
+        
+        <div id="caixa">
+            <small>
+                SELECT * FROM nomeTabela
+            </small>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

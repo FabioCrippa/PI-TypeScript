@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Dictionary</title>
+    <link rel="stylesheet" href="assets/css/styles_html.css">
+   
+</head>
+
+<body>
+    <main>
+          <h1>Developer Dictionary - JavaScript</h1>
+
+        <div class="folha">
+        <h1>Array</h1>
+
+            <h3>O objeto Array é usado para armazenar vários valores em uma única variável.</h3>
+                <p>Neste exemplo abaixo, a variável "cars" armazena os valores da array[] em uma constante</p>
+                <p>e imprime a lista quando é usado o método getElementById para pegar os valores dentro da array:</p>
+                
+                <div>
+                    <div>
+                        <small>
+                            <p>const cars = ["Ferrari", "Porshe", "BMW", "Mercedes"];</p>
+                            <p>document.getElementById("vehicle").innerHTML = cars;</p>
+                    
+                            <h3>Resultado:</h3>
+
+                            <p id="vehicle"></p>
+                            <script>
+                                const cars = ["Ferrari", "Porshe", "BMW", "Mercedes"];
+                                document.getElementById("vehicle").innerHTML = cars;
+                            </script>
+                        </small>
+                    </div>
+                </div>
+                
+
+        <h1>String</h1>
+
+            <h3>Uma string JavaScript armazena uma série de caracteres como "Fabio Crippa".</h3>
+                <p>Uma string pode ser qualquer texto entre aspas duplas ou simples:</p>
+                
+                        <div>
+                            <small>
+                                <p>let carName1 = "HB20";</p>
+                            <p>let carName2 = "Corsa";</p>
+                            <p>document.getElementById("automoveis").innerHTML = carName1 + " " + carName2;</p>
+                        
+                            <h3>Resultado:</h3>
+                
+                                <p id="automoveis"></p>
+                        <script>
+                            let carName1 = "HB20";
+                            let carName2 = "Corsa";
+                            document.getElementById("automoveis").innerHTML = carName1 + " " + carName2;
+                        </script>
+                            </small>
+                    </div>
+        
+        <h1>Number</h1>
+
+            <h3>JavaScript tem apenas um tipo de número.</h3>
+                <p>Os números podem ser escritos com ou sem decimais:</p>
+                
+                    <div>
+                        <small>
+                            <p>let num1 = 3.25;</p>
+                            <p>let num2 = 10;</p>
+                            <p>document.getElementById("numeros").innerHTML = num1 + " " + num2;</p>
+                    
+                            <h3>Resultado:</h3>
+
+                            <p id="numeros"></p>
+                        <script>
+                            let num1 = 3.25;
+                            let num2 = 10;
+                            document.getElementById("numeros").innerHTML = num1 + "<br>" + num2;
+                        </script>
+                        </small>
+                </div>
+                
+         <h1>Math</h1>
+
+            <h3>O objeto Math permite que você execute tarefas matemáticas.</h3>
+                <p>A matemática não é um construtor. Todas as propriedades/métodos de Math</p>
+                <p>podem ser chamadas usando Math como um objeto, sem criá-lo:</p>
+                
+                    <div>
+                        <small>
+                            <p>"buscaPi"</p>
+                            <p>"raizQuadrada"</p>
+                
+                            <p>document.getElementById("buscaPi").innerHTML = Math.PI;</p>
+                            <p>document.getElementById("raizQuadrada").innerHTML = Math.sqrt(16);</p>
+                    
+                            <h3>Resultado:</h3>
+
+                            <p id="buscaPi"></p>
+                            <p id="raizQuadrada" ></p>
+                        <script>
+                            document.getElementById("buscaPi").innerHTML = Math.PI;
+                            document.getElementById("raizQuadrada").innerHTML = Math.sqrt(16);
+                        </script>
+                        </small>
+                           
+                    </div>
+            </div>           
+    </main>
+</body>
+</html>

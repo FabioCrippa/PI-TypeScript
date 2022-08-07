@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Dictionary</title>
+    <link rel="stylesheet" href="assets/css/styles_html.css">
+    
+</head>
+
+<body>
+    <main>
+          <h1>Developer Dictionary - TypeScript</h1>
+
+          <div class="folha">
+        <h1>Tipos simples do TypeScript</h1>
+            <h3>TypeScript suporta alguns tipos simples (primitivos)</h3>
+        <div id="caixa">
+            <ul>
+                <li>boolean - valores verdadeiros ou falsos</li>
+                    <p>let vouViajar: boolean = true;</p>
+                <li>number - números inteiros e valores de pontos flutuantes</li>
+                    <p>let idade: number = 40; </p>
+                <li>string - valores de texto como "TypeScript Rocks"</li>
+                    <p>let firstName: string = "Fabio";</p>
+            </ul>
+        </div>        
+                
+        
+        <h1>TypeScript Arrays</h1>
+                <h3>TypeScript tem uma sintaxe específica para digitar matrizes.</h3>
+        <div id="caixa">
+            <p>const names: string[];</p>
+            <p>names.push("Maria");</p>
+            <p>console.log(names);//["Maria"]</p>
+        </div>            
+                
+
+        <h1>Tipos de objetos TypeScript</h1>
+                <h3>TypeScript tem uma sintaxe específica para digitar objetos.</h3>
+        <div id="caixa">
+            <p>const car: {type: string, model: string, year: number} = {</p>
+            <p>type: "Fiat",</p>
+            <p>model: "Ferrari",</p>
+            <p>year: 2020</p>
+            <p>};</p>
+            <p>console.log(car);//{ type: 'Toyota', model: 'Corolla', year: 2009 }</p>
+        </div>            
+                    
+
+        <h1>Alias(pseudônimo)</h1>
+                <h3>Tipos definidos separadamente das variáveis que os utilizam.</h3>    
+        <div id="caixa">
+            <small>
+                type CarYear = number;<br>
+                type CarType = string;<br>
+                type CarModel = string;<br>
+                <br><br>
+
+                    type Car = {
+                    year: CarYear,
+                    type: CarType,
+                    model: CarModel
+                };
+                <br><br>
+
+                const carYear: CarYear = 2001;<br>
+                const carType: CarType = "Toyota";<br>
+                const carModel: CarModel = "Corolla";<br>
+                <br><br>
+
+                const car: Car = {
+                  year: carYear,
+                  type: carType,
+                  model: carModel
+                };<br>
+                
+                console.log(car);//{ year: 2001, type: 'Toyota', model: 'Corolla' }
+            </small>
+        </div>
+
+        <h1>Interfaces</h1>
+            <h3>As interfaces são semelhantes aos codinomes de tipo, exceto que só se aplicam a tipos objetos</h3>
+        <div id="caixa">
+            <small>
+                interface Rectangle {
+                    height: number,
+                    width: number
+                  };
+                  <br><br>
+                  
+                  const rectangle: Rectangle = {
+                    height: 20,
+                    width: 10
+                  };
+                  <br><br>
+                  console.log(rectangle);//{ height: 20, width: 10 }
+            </small>
+        </div>
+
+        <h1>Ampliação de Interfaces</h1>
+            <h3>Estender uma interface significa que você está criando uma nova interface<br> 
+                com as mesmas propriedades do original, além de algo novo.</h3>
+        <div id="caixa">
+            <small>
+                interface Rectangle {
+                    height: number,
+                    width: number
+                  }
+                  <br><br>
+                  
+                  interface ColoredRectangle extends Rectangle {
+                    color: string
+                  }
+                  <br><br>
+                  
+                  const coloredRectangle: ColoredRectangle = {
+                    height: 20,
+                    width: 10,
+                    color: "red"
+                  };
+                  <br><br>
+                  
+                  console.log(coloredRectangle);//{ height: 20, width: 10, color: 'red' }
+            </small>
+        </div>
+
+        <h1>Funções do TypeScript</h1>
+            <h3>O tipo de valor devolvido pela função pode ser explicitamente definido.</h3>
+        <div id="caixa">
+            <small>
+                function getTime(): number {
+                    return new Date().getTime();
+                  }
+                  <br><br>
+                  
+                  console.log(getTime());
+            </small>
+        </div>
+
+        <h1>Retorno vazio - Void</h1>
+        <h3>O tipo pode ser usado para indicar que uma função não retorna nenhum valor (void)</h3>
+        <div id="caixa">
+            <small>
+                function printHello(): void {
+                    console.log('Hello!');
+                  }
+                  <br><br>
+                  
+                  printHello();//Hello!
+            </small>
+        </div>
+
+        <h1>Parâmetros</h1>
+        <h3>Os parâmetros de função são digitados com uma sintaxe semelhante às declarações variáveis.</h3>
+        <div id="caixa">
+            <small>
+                function multiply(a: number, b: number) {
+                    return a * b;
+                  }
+                  <br><br>
+                  
+                  console.log(multiply(2,5))//10
+            </small>
+        </div>
+
+        <h1>Parâmetros Opcionais -  sinal ?</h1>
+        <h3>Por padrão, o TypeScript assumirá que todos os parâmetros são necessários, mas eles podem ser explicitamente marcados como opcionais.</h3>
+        <div id="caixa">
+            <small>
+                function add(a: number, b: number, c?: number) {
+                    return a + b + (c || 0);
+                  }
+                  <br><br>
+                  
+                  console.log(add(2,5))//7
+            </small>
+        </div>
+
+        <h1>TypeScript Classes - tipos</h1>
+        <h3>TypeScript adiciona tipos e modificadores de visibilidade às classes JavaScript.</h3>
+        <div id="caixa">
+            <small>
+                class Person {
+                    name: string;
+                  }
+                  <br><br>
+                        
+                  const person = new Person();
+                  person.name = "Jane";
+                  
+                  console.log(person);//Person { name: 'Jane' }
+            </small>
+        </div>
+
+        <h1>TypeScript Classes - visibilidade</h1>
+        <h3>Existem três modificadores de visibilidade principais no TypeScript.</h3>
+        <ul>
+            <li>public - (padrão) permite o acesso ao membro da classe de qualquer lugar</li>
+            <li>private - só permite o acesso ao membro da classe de dentro da classe</li>
+            <li>protected - permite o acesso ao membro da classe de si mesmo e a <br> todas as classes que o herdam, que está coberto na seção de herança abaixo</li>
+        </ul>
+        <div id="caixa">
+            <small>
+                class Person {
+                    private name: string;
+                    <br><br>
+                  
+                    public constructor(name: string) {
+                      this.name = name;
+                    }
+                    <br><br>
+                  
+                    public getName(): string {
+                      return this.name;
+                    }
+                  }
+                  <br><br>
+                        
+                  const person = new Person("Jane");
+                  <br><br>
+                  
+                  console.log(person.getName());<br>
+                  //person.name não é acessível fora da classe, pois é privado
+            </small>
+        </div>
+    </div>
+    </main>
+</body>
+</html>
